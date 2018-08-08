@@ -14,17 +14,17 @@ public class MessageProducer {
 	String topicName;
 
 	@Autowired
-	private KafkaTemplate<Long, String> kafkaTemplate;
+	private KafkaTemplate<String, String> kafkaTemplate;
 
 	public void publishXmlMessage(String xmlMessage) {
-		kafkaTemplate.send(topicName, xmlMessage).addCallback(new ListenableFutureCallback<SendResult<Long, String>>() {
+		kafkaTemplate.send(topicName, xmlMessage).addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
 			@Override
 			public void onFailure(Throwable throwable) {
 				System.out.println("Error publishing " + xmlMessage);
 			}
 
 			@Override
-			public void onSuccess(SendResult<Long, String> stringUserSendResult) {
+			public void onSuccess(SendResult<String, String> stringUserSendResult) {
 				System.out.println(
 						"Published successfully " + xmlMessage + " to Kafka " + stringUserSendResult.toString());
 			}
