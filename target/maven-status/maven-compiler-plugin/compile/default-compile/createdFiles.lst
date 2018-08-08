@@ -1,0 +1,6 @@
+com\au\spring\boot\main\controller\KafkaController.class
+com\au\spring\boot\main\producer\MessageProducer$1.class
+com\au\spring\boot\main\config\KafkaConfig.class
+com\au\spring\boot\main\producer\MessageProducer.class
+com\au\spring\boot\main\consumer\MessageConsumer.class
+com\au\spring\boot\main\SpringBootMain.class
